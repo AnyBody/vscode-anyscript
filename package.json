@@ -1,0 +1,52 @@
+{
+    "name": "anyscript",
+    "displayName": "AnyScript Language Colorizer",
+    "description": "AnyScript Language Colorizer.",
+    "version": "0.0.1",
+    "publisher": "anybody",
+    "engines": {
+        "vscode": "^1.0.0"
+    },
+	"bugs": {
+		"url": "https://github.com/AnyBody/vscode-anyscript/issues",
+		"email": "mel@anybodytech.com"
+	},
+	"homepage": "https://anyscript.org/",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/AnyBody/vscode-anyscript.git"
+	},
+    "categories": [
+        "Languages",
+        "Snippets"
+    ],
+    "contributes": {
+        "languages": [
+            {
+                "id": "anyscript",
+                "aliases": [
+                    "AnyScript",
+                    "any"
+                ],
+                "extensions": [
+                    ".any"
+                ],
+                "configuration": "./anyscript.configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "anyscript",
+                "scopeName": "source.anyscript",
+                "path": "./syntaxes/anyscript.tmLanguage"
+            }
+        ],
+		"snippets": [
+			{
+				"language": "anyscript",
+				"path": "./snippets/anyscript.json"
+			}
+		]
+    },
+    "icon": "icon.png"
+}
