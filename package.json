@@ -38,7 +38,7 @@
             {
                 "language": "anyscript",
                 "scopeName": "source.anyscript",
-                "path": "./syntaxes/anyscript.tmLanguage"
+                "path": "./syntaxes/AnyScript.tmLanguage"
             }
         ],
 		"snippets": [
