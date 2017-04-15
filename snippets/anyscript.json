@@ -1,123 +1,142 @@
 {
-	"Call-Function Statement": {
-		"prefix": "callfnc",
+	"AnyDrawRefFrame Class": {
+		"prefix": "AnyDrawRefFrame",
 		"body": [
-			"[${params}] call ${fnc_name};"
-		],
-		"description": "Call Function Statement"
-	},
-	"Spawn-Function Statement": {
-		"prefix": "spawnfnc",
-		"body": [
-			"[${params}] spawn ${fnc_name};"
-		],
-		"description": "Spawn Function Statement"
-	},
-	"Execute Script Statement": {
-		"prefix": "execVM",
-		"body": [
-			"[${param1},${param2}] execVM \"${somepath\\file.sqf}\";"
-		],
-		"description": "Executes a script under the given path"
-	},
-	"If-Then Statement": {
-		"prefix": "ifthen",
-		"body": [
-			"if (${condition}) then {",
-			"\t$0",
-			"};"
-		],
-		"description": "If-Then Statement"
-	},
-	"If-Exit Statement": {
-		"prefix": "ifexit",
-		"body": [
-			"if (${condition}) exitWith {",
-			"\t$0",
-			"};"
-		],
-		"description": "If-Exit Statement"
-	},
-	"If-Else Statement": {
-		"prefix": "ifelse",
-		"body": [
-			"if (${condition}) then {",
-			"\t$0",
-			"} else {",
-			"\t",
-			"};"
-		],
-		"description": "If-Else Statement"
-	},
-	"Switch Statement": {
-		"prefix": "switch",
-		"body": [
-			"switch (${key}) do {",
-			"\tcase \"${value}\": { };",
-			"\tdefault { };",
-			"};"
-		],
-		"description": "Switch Statement"
-	},
-	"While-Do Loop": {
-		"prefix": "while",
-		"body": [
-			"while (${condition}) do {",
-			"\t$0",
-			"};"
-		],
-		"description": "While-Do Loop"
-	},
-	"For Loop": {
-		"prefix": "for",
-		"body": [
-			"for [${BEGIN}, ${CONDITION}, ${STEP}] do {",
-			"\t$0",
-			"};"
-		],
-		"description": "for Loop (Recommended)"
-	},
-	"ForEach Loop": {
-		"prefix": "forEach",
-		"body": [
+			"AnyDrawRefFrame ${1:Drw} =",
 			"{",
-			"\t// Current result is saved in variable _x",
-			"\t$0",
-			"} forEach ${array};"
+			"\tRGB = {${2:1},${3:0},${4:0}};",
+			"\tScaleXYZ = ${1:0.1}*{1,1,1};};",
+			"};${0}"
 		],
-		"description": "forEach Loop (Recommended)"
+		"description": "Create RefFrame drawing"
 	},
-	"For-From-To Loop": {
-		"prefix": "forFromTo",
+	"AnyRefNode Class": {
+		"prefix": "AnyRefNode",
 		"body": [
-			"for \"VARNAME\" from STARTVALUE to ENDVALUE do {",
-			"\t$0",
+			"AnyRefNode ${1:ObjectName} = ",
+            "{",
+			"\tsRel = ${2:{0.0, 0.0, 0.0\\};}",
+			"\tsRel = ${2:{{1.0, 0.0, 0.0\\}, {0.0, 1.0, 0.0\\}, {0.0, 0.0, 1.0\\}\\};}",
+			"\tAnyDrawNode drw = {ScaleXYZ=${1:0.1}*{1,1,1};};",
+			"};${0}"
+		],
+		"description": "AnyRefNode"
+	},
+	"RotMat Function": {
+		"prefix": "RotMat",
+		"body": ["RotMat(${1:0.0}, ${2:x})${0}"],
+		"description": "Create a rotation matrix  _storedCode; - Wait until function, code or script reaches endpoint"
+	},
+	"AnyFunConst Class": {
+		"prefix": "AnyFunConst",
+		"body": [
+			"AnyFunConst ${1:Fun} = ",
+            "{",
+			"\tValue = {${2:1.0}};",
+			"};${0}"
+		],
+		"description": "A constant function"
+	},
+	"AnyFolder Class": {
+		"prefix": "AnyFolder",
+		"body": [
+			"AnyFolder ${1:FolderName} = ",
+            "{",
+			"\t${0}",
 			"};"
 		],
-		"description": "for-From-To Loop"
+		"description": "Create a new AnyFolder Object"
 	},
-	"For-From-To-Step Loop": {
-		"prefix": "forFromToStep",
+	"AnyKinMeasureOrg Class": {
+		"prefix": "AnyKinMeasureOrg",
 		"body": [
-			"for \"VARNAME\" from STARTVALUE to ENDVALUE step STEP do {",
-			"\t$0",
+			"AnyKinMeasureOrg ${1:ObjectName} = ",
+            "{",
+			"\tAnyKinMeasure& ref1 = ${2}",
+			"\tMeasureOrganizer = {${3}};",
 			"};"
 		],
-		"description": "for-From-To-Step Loop"
+		"description": "Create a Measure Organizer Object"
 	},
-	"Sleep Function": {
-		"prefix": "sleep",
-		"body": ["sleep 60;"],
-		"description": "sleep [int seconds]; - Suspend execution for given time in seconds."
+	"AnyKinRotational Class": {
+		"prefix": "AnyKinRotational",
+		"body": [
+			"AnyKinRotational ${1:ObjectName} = ",
+            "{",
+			"\tAnyRefFrame& ref1 = ${2}",
+			"\tAnyRefFrame& ref2 = ${3}",
+			"\tType = RotAxesAngles;",
+            "\tAxis1 = z; Axis2 = y; Axis3 = x;",
+			"};",
+			"${0}"
+		],
+		"description": "Create an AnyKinRotational Object"
 	},
-	"Wait-Until Function": {
-		"prefix": "waitUntil",
-		"body": ["waitUntil { ${true}; };"],
-		"description": "waitUntil { [bool finished] }; - Suspend futher execution until 'true' is returned."
-	},
-	"scriptDone Function": {
-		"prefix": "scriptDone",
-		"body": ["scriptDone _storedCode;"],
-		"description": "[bool] scriptDone _storedCode; - Wait until function, code or script reaches endpoint"
+	"VideoLookAtCamera class_template": {
+		"prefix": "VideoLookAtCamera",
+		"body": [
+			"${1:#include \"path/to/CameraClassTemplate.any\"}",
+			"",
+			"Main = {",
+			"\tVideoLookAtCamera ${2:VideoMaker}(UP_DIRECTION=${3:y, CREATE_GIF=0}) =",
+			"\t\t",
+			"\t\t// The sequence of analysis to make the recording from.",
+			"\t\tAnalysis = {",
+			"\t\t\tAnyOperation &ref = ${4:Main.MyStudy.Kinematics};",
+			"\t\t};",
+			"\t\t",
+			"\t\t/// File name of the video that will be created",
+			"\t\tAnyString VideoName = ANYBODY_NAME_MAINFILE;",
+			"\t\t",
+			"\t\t/// Video resolution in pixels: Defaults to FullHD",
+			"\t\t/// Width of the video in pixels",
+			"\t\tAnyIntArray VideoResolution = {1920,1080};",
+			"\t\t",
+			"\t\t",
+			"\t\t/// The ratio between video resolution and input images saved ", 
+			"\t\t/// from anybody. Default is to save images in same resolution as ",
+			"\t\t/// the output video. It is an advantage to set this to 2 or 4 when ",
+			"\t\t/// making videos with a low resolution",
+			"\t\tAnyFloat VideoInputScale = 2; ",
+			"\t\t",
+			"\t\t/// The video codec ffmepg will use to create the video. ",
+			"\t\t/// Choose \"libxvid\" for best for compatibility (eg. with PowerPoint)",
+			"\t\t/// or \"libx264\" for best performance",
+			"\t\tAnyString VideoCodec = \"libxvid\";",
+			"\t\t",
+			"\t\t/// Determines the speed of the video. Setting it to ",
+			"\t\t/// nStep/(tEnd-tStart) make the video run in real time. ",
+			"\t\tAnyIntVar VideoInputFrameRate = 24; ",
+			"\t\t",
+			"\t\t",
+			"\t\t/// Video output framerate. ",
+			"\t\tAnyIntVar VideoOutputFrameRate = 24;",
+			"\t\t",
+			"\t\t/// The point the camera focus on",
+			"\t\tAnyVec3 CameraLookAtPoint = DesignVar({0,1,0});",
+			"\t\t",
+			"\t\t/// The vertical field of view in meters at the LookAtPoint",
+			"\t\tAnyVar CameraFieldOfView = DesignVar(2.0);",
+			"\t\t",
+			"\t\t/// The direction which the camera is placed",
+			"\t\t/// (In global coordinate with respect to the LookAtPoint)",
+			"\t\tAnyVec3 CameraDirection = DesignVar({1,0,0});",
+			"\t\t",
+			"\t\t/// The background color used for the video",
+			"\t\tAnyVec3 BackgroundColor = DesignVar({1,1,1});",
+			"\t\t",
+			"\t\t/// Counter for numbering the saved images. This defaults to the ",
+			"\t\t/// camera class builtin counter. ",
+			"\t\t#var AnyInt Counter = ${4:Main.MyStudy.Kinematics}.iStep;",
+			"\t}; \\End of ${2:VideoMaker}",
+			"\t",
+			"\t${4:Main.MyStudy.Kinematics} = {",
+			"\t\t//Reference to camera is need to update the counter when using iStep",
+			"\t\tAnyFolder& CameraRef = Main.${2:VideoMaker};",
+			"\t};",
+			"};\\End of Main${0}"
+		],
+		"description": "Create a new Video Camera class template. "
 	}
+	
 }
