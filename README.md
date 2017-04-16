@@ -10,7 +10,7 @@ This extension adds rudimentary support for the AnyScript language for Visual St
 * Launch VS Code Quick Open (Ctrl+P), paste the following command, and press enter:
 * `ext install vscode-anyscript`
 
-Alternatively, you can download the extension from the [marketplace](https://marketplace.visualstudio.com/items?itemName=anybody.vscode-anyscript).
+Alternatively, you can download the extension from the [marketplace](https://marketplace.visualstudio.com/items?itemName=anybody.anyscript).
 
 ## Contribute
 This extension is still very limited. Help by refining the syntax highlighting files or add new snippets. It is much appreciated. 
