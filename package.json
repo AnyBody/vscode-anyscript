@@ -1,7 +1,7 @@
 {
     "name": "anyscript",
-    "displayName": "AnyScript Language Colorizer",
-    "description": "AnyScript Language Colorizer.",
+    "displayName": "AnyScript",
+    "description": "Syntax highlighter and snippets for AnyScript.",
     "version": "0.0.1",
     "publisher": "anybody",
     "engines": {
