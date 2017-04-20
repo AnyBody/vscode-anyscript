@@ -2,7 +2,7 @@
     "name": "anyscript",
     "displayName": "AnyScript",
     "description": "Syntax highlighter and snippets for AnyScript.",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "publisher": "anybody",
     "engines": {
         "vscode": "^1.0.0"
