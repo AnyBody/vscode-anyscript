@@ -83,7 +83,7 @@
 			"\t\t",
 			"\t\t// The sequence of analysis to make the recording from.",
 			"\t\tAnalysis = {",
-			"\t\t\tAnyOperation &ref = ${4:Main.Studies.InverseDynamicStudy};",
+			"\t\t\tAnyOperation &ref = ${4:Main.Studies.InverseDynamicStudy}.{5:InverseDynamics};",
 			"\t\t};",
 			"\t\t",
 			"\t\t// File name of the video that will be created",
