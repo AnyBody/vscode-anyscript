@@ -5,7 +5,7 @@
 			"AnyDrawRefFrame ${1:Drw} =",
 			"{",
 			"\tRGB = {${2:1},${3:0},${4:0}};",
-			"\tScaleXYZ = ${1:0.1}*{1,1,1};};",
+			"\tScaleXYZ = ${5:0.1}*{1,1,1};};",
 			"};${0}"
 		],
 		"description": "Create RefFrame drawing"
