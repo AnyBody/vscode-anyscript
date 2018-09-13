@@ -2,20 +2,20 @@
     "name": "anyscript",
     "displayName": "AnyScript",
     "description": "Syntax highlighter and snippets for AnyScript.",
-    "version": "0.1.2",
+    "version": "0.1.3",
     "publisher": "anybody",
     "engines": {
         "vscode": "^1.0.0"
     },
-	"bugs": {
-		"url": "https://github.com/AnyBody/vscode-anyscript/issues",
-		"email": "mel@anybodytech.com"
-	},
-	"homepage": "https://anyscript.org/",
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/AnyBody/vscode-anyscript.git"
-	},
+    "bugs": {
+        "url": "https://github.com/AnyBody/vscode-anyscript/issues",
+        "email": "mel@anybodytech.com"
+    },
+    "homepage": "https://anyscript.org/",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/AnyBody/vscode-anyscript.git"
+    },
     "categories": [
         "Languages",
         "Snippets"
@@ -41,12 +41,12 @@
                 "path": "./syntaxes/AnyScript.tmLanguage"
             }
         ],
-		"snippets": [
-			{
-				"language": "anyscript",
-				"path": "./snippets/anyscript.json"
-			}
-		]
+        "snippets": [
+            {
+                "language": "anyscript",
+                "path": "./snippets/anyscript.json"
+            }
+        ]
     },
     "icon": "icon.png"
 }
