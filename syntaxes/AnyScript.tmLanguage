@@ -32,7 +32,7 @@
         <key>name</key>
         <string>keyword.control.anyscript</string>
         <key>match</key>
-        <string>(#ifpathexists|#ifnpathexists|#if|#ifdef|#ifndef|#endif|#else|#define|#path|#undef|#var|#class_template))\b</string>
+        <string>(#ifpathexists|#ifnpathexists|#if|#ifdef|#ifndef|#endif|#else|#define|#path|#undef|#var|#class_template)\b</string>
       </dict>
       <dict>
         <key>name</key>

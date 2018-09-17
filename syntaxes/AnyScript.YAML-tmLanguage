@@ -15,7 +15,7 @@ patterns:
   match: '(//).*$\n?'
 
 - name: keyword.control.anyscript
-  match: '(#ifpathexists|#ifnpathexists|#if|#ifdef|#ifndef|#endif|#else|#define|#path|#undef|#var|#class_template))\b'
+  match: '(#ifpathexists|#ifnpathexists|#if|#ifdef|#ifndef|#endif|#else|#define|#path|#undef|#var|#class_template)\b'
 
 - name: keyword.control.include.anyscript
   match: '(#include|#import)\b'
