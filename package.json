@@ -17,7 +17,7 @@
         "url": "https://github.com/AnyBody/vscode-anyscript.git"
     },
     "categories": [
-        "Languages",
+        "Programming Languages",
         "Snippets"
     ],
     "contributes": {
