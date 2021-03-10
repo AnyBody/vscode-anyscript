@@ -138,6 +138,18 @@
 			"};//End of Main${0}"
 		],
 		"description": "Create a new Video Camera class template. "
-	}
-	
+	},
+	"AnyForce3D Class": {
+		"prefix": "AnyForce3D",
+		"body": [
+			"AnyForce3D ${1:ObjectName} = ",
+			"{",
+  			"\tF = {${2:0.0}, ${3:0.0}, ${4:0.0}};",
+  			"\t//Flocal = {${5:0.0}, ${6:0.0}, ${7:0.0}};",
+  			"\tAnyRefFrame &${8:Insert name} = ${9:Insert object reference (or full object definition)};",
+			"};",
+			"${0}"
+		],
+		"description": "Create a 3D force vector."
+	}   	
 }
