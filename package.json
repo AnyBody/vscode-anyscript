@@ -46,6 +46,12 @@
         "path": "./syntaxes/any.tmGrammar.json"
 
       }
+    ],
+    "snippets": [
+      {
+        "language": "anyscript",
+        "path": "./snippets/anyscript.json"
+      }
     ]
   },
   "scripts": {
