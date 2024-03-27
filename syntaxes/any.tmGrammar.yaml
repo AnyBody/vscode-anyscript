@@ -4,7 +4,6 @@ name: AnyScript
 scopeName: source.anyscript
 fileTypes: [any]
 uuid: 26918793-eae6-4cde-b449-e6ed2e2668bb
-
 patterns:
 
 - name: comment.block
