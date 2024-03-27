@@ -2,6 +2,7 @@
 // Import the module and reference it with the alias vscode in your code below
 import * as vscode from "vscode";
 import { stringRGBToColor } from "./helpers";
+import { rgbColorPresentation, rgbMemberColorProvider } from "./intellisense/colorProvider";
 
 // This method is called when your extension is activated
 // Your extension is activated the very first time the command is executed
@@ -32,49 +33,8 @@ export function activate(context: vscode.ExtensionContext) {
   // context.subscriptions.push(provider);
 
   const rgbColorPicker = vscode.languages.registerColorProvider("anyscript", {
-    provideColorPresentations: (color, context) => {
-      const red = color.red.toPrecision(2);
-      const green = color.green.toPrecision(2);
-      const blue = color.blue.toPrecision(2);
-
-      const label = "{" + red + ", " + green + ", " + blue + "};";
-      return [
-        {
-          label: label,
-        },
-      ];
-    },
-    provideDocumentColors: (document, token) => {
-      const colorInfos: vscode.ColorInformation[] = [];
-      const rgbRegex =
-        /RGB\s*=\s*(\{\s*[01](\.\d+)?,\s*[01](\.\d+)?,\s*[01](\.\d+)?\s*\}\s*;)/g;
-
-      let match;
-
-      while ((match = rgbRegex.exec(document.getText())) !== null) {
-        const stringRGB = match[1];
-
-        const identifierStartPos = document.positionAt(
-          match.index + (match[0].length - stringRGB.length)
-        );
-        const identifierEndPos = document.positionAt(
-          match.index + match[0].length
-        );
-
-        const colorInfo = {
-          color: stringRGBToColor(stringRGB),
-          range: new vscode.Range(
-            identifierStartPos.line,
-            identifierStartPos.character,
-            identifierEndPos.line,
-            identifierEndPos.character
-          ),
-        };
-
-        colorInfos.push(colorInfo);
-      }
-      return colorInfos;
-    },
+    provideColorPresentations: rgbColorPresentation,
+    provideDocumentColors: rgbMemberColorProvider,
   });
 
   context.subscriptions.push(rgbColorPicker);

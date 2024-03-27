@@ -44,7 +44,6 @@
         "language": "anyscript",
         "scopeName": "source.anyscript",
         "path": "./syntaxes/any.tmGrammar.json"
-
       }
     ],
     "snippets": [
@@ -52,7 +51,14 @@
         "language": "anyscript",
         "path": "./snippets/anyscript.json"
       }
-    ]
+    ],
+    "configurationDefaults": {
+      "[anyscript]": {
+        "editor.tabSize": 2,
+        "editor.insertSpaces": true,
+        "editor.detectIndentation": false
+      }
+    }
   },
   "scripts": {
     "vscode:prepublish": "npm run package",
