@@ -53,9 +53,9 @@ patterns:
 
   - match: '["\w\)](\s+".*"\s*);'
     captures:
-      "1": { name: constant.string }
+      "1": { name: string.value }
 
-  - name: constant.string
+  - name: string.value
     begin: '"'
     end: '"'
     patterns:

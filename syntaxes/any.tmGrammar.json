@@ -72,12 +72,12 @@
       "match": "[\"\\w\\)](\\s+\".*\"\\s*);",
       "captures": {
         "1": {
-          "name": "constant.string"
+          "name": "string.value"
         }
       }
     },
     {
-      "name": "constant.string",
+      "name": "string.value",
       "begin": "\"",
       "end": "\"",
       "patterns": [
