@@ -1,71 +1,39 @@
-# anyscript README
+# AnyScript README
 
-This is the README for your extension "anyscript". After writing up a brief description, we recommend including the following sections.
+The AnyScript extension is a Visual Studio Code extension that provides syntax highlighting and snippets for the AnyScript language.
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+### Syntax Highlighting
 
-For example if there is an image subfolder under your extension project workspace:
+The extension provides syntax highlighting for the AnyScript language. The extension highlights AnyScript classes, functions, and constants.
 
-\!\[feature X\]\(images/feature-x.png\)
+### Snippets
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+The extension provides snippets for the AnyScript language. The snippets are are work in progress and will be updated in the future.
 
-## Requirements
+### RGB Color Picker
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+The extension provides a color picker for RGB colors. The extension regonizes RGB colors in the format `RGB = {1, 0.2, 0.0};` and provides a color picker when you hover over the color.
 
-## Extension Settings
+![Color Picker](images/colorPicker.gif)
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+## Change Log
 
-For example:
+All notable changes to the "anyscript" extension will be documented here.
 
-This extension contributes the following settings:
+### 0.2.0
 
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
+#### Added
 
-## Known Issues
+- Added color picker for RGB colors
+- New AnyScript class, function, and constant highlighting
+- Improved language configuration
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
+### 0.1.4
 
-## Release Notes
+- Initial release
 
-Users appreciate release notes as you update your extension.
+## License
 
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
----
-
-## Following extension guidelines
-
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
-
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
-
-## Working with Markdown
-
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
