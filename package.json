@@ -2,7 +2,7 @@
   "name": "anyscript",
   "displayName": "AnyScript",
   "description": "Language support for the AnyScript language",
-  "version": "0.2.0",
+  "version": "0.2.2",
   "engines": {
     "vscode": "^1.81.0"
   },
@@ -12,6 +12,9 @@
     "type": "git",
     "url": "https://github.com/AnyBody/vscode-anyscript"
   },
+  "publisher": "anybody",
+  "icon": "icon.png",
+  
   "categories": [
     "Other",
     "Programming Languages",
@@ -21,12 +24,6 @@
   "activationEvents": [],
   "main": "./dist/extension.js",
   "contributes": {
-    "commands": [
-      {
-        "command": "anyscript.helloWorld",
-        "title": "Hello World"
-      }
-    ],
     "languages": [
       {
         "id": "anyscript",
