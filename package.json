@@ -12,6 +12,7 @@
     "type": "git",
     "url": "https://github.com/AnyBody/vscode-anyscript"
   },
+  "publisher": "anybody",
   "categories": [
     "Other",
     "Programming Languages",
