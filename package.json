@@ -1,52 +1,96 @@
 {
-    "name": "anyscript",
-    "displayName": "AnyScript",
-    "description": "Syntax highlighter and snippets for AnyScript.",
-    "version": "0.1.4",
-    "publisher": "anybody",
-    "engines": {
-        "vscode": "^1.0.0"
-    },
-    "bugs": {
-        "url": "https://github.com/AnyBody/vscode-anyscript/issues",
-        "email": "mel@anybodytech.com"
-    },
-    "homepage": "https://anyscript.org/",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/AnyBody/vscode-anyscript.git"
-    },
-    "categories": [
-        "Languages",
-        "Snippets"
+  "name": "anyscript",
+  "displayName": "AnyScript",
+  "description": "Language support for the AnyScript language",
+  "version": "0.2.0",
+  "engines": {
+    "vscode": "^1.81.0"
+  },
+  "license": "SEE LICENSE IN LICENSE",
+  "pricing": "Free",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AnyBody/vscode-anyscript"
+  },
+  "categories": [
+    "Other",
+    "Programming Languages",
+    "Snippets",
+    "Formatters"
+  ],
+  "activationEvents": [],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "anyscript.helloWorld",
+        "title": "Hello World"
+      }
     ],
-    "contributes": {
-        "languages": [
-            {
-                "id": "anyscript",
-                "aliases": [
-                    "AnyScript",
-                    "any"
-                ],
-                "extensions": [
-                    ".any"
-                ],
-                "configuration": "./anyscript.configuration.json"
-            }
+    "languages": [
+      {
+        "id": "anyscript",
+        "extensions": [
+          ".any"
         ],
-        "grammars": [
-            {
-                "language": "anyscript",
-                "scopeName": "source.anyscript",
-                "path": "./syntaxes/AnyScript.tmLanguage"
-            }
+        "aliases": [
+          "anyscript",
+          "AnyScript",
+          "any"
         ],
-        "snippets": [
-            {
-                "language": "anyscript",
-                "path": "./snippets/anyscript.json"
-            }
-        ]
-    },
-    "icon": "icon.png"
+        "configuration": "./syntaxes/language-configuration.json",
+        "icon": {
+          "light": "icon.png",
+          "dark": "icon.png"
+        }
+      }
+    ],
+    "grammars": [
+      {
+        "language": "anyscript",
+        "scopeName": "source.anyscript",
+        "path": "./syntaxes/any.tmGrammar.json"
+      }
+    ],
+    "snippets": [
+      {
+        "language": "anyscript",
+        "path": "./snippets/anyscript.json"
+      }
+    ],
+    "configurationDefaults": {
+      "[anyscript]": {
+        "editor.tabSize": 2,
+        "editor.insertSpaces": true,
+        "editor.detectIndentation": false
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run package",
+    "compile": "webpack",
+    "watch": "webpack --watch",
+    "package": "webpack --mode production --devtool hidden-source-map",
+    "compile-tests": "tsc -p . --outDir out",
+    "watch-tests": "tsc -p . -w --outDir out",
+    "pretest": "npm run compile-tests && npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.1",
+    "@types/node": "16.x",
+    "@types/vscode": "^1.81.0",
+    "@typescript-eslint/eslint-plugin": "^6.4.1",
+    "@typescript-eslint/parser": "^6.4.1",
+    "@vscode/test-electron": "^2.3.4",
+    "eslint": "^8.47.0",
+    "glob": "^10.3.3",
+    "js-yaml": "^4.1.0",
+    "mocha": "^10.2.0",
+    "ts-loader": "^9.4.4",
+    "typescript": "^5.1.6",
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4"
+  }
 }

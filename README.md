@@ -1,19 +1,39 @@
-# AnyScript for Visual Studio Code
+# AnyScript README
 
-This extension adds rudimentary support for the AnyScript language for Visual Studio Code.
+The AnyScript extension is a Visual Studio Code extension that provides syntax highlighting and snippets for the AnyScript language.
 
-# Features
-- [x] Syntax highlighting
-- [x] Code Snippets (Not many, so help improve this)
+## Features
 
-## Installing
-* Launch VS Code Quick Open (Ctrl+P), paste the following command, and press enter:
-* `ext install vscode-anyscript`
+### Syntax Highlighting
 
-Alternatively, you can download the extension from the [marketplace](https://marketplace.visualstudio.com/items?itemName=anybody.anyscript).
+The extension provides syntax highlighting for the AnyScript language. The extension highlights AnyScript classes, functions, and constants.
 
-## Contribute
-This extension is still very limited. Help by refining the syntax highlighting files or add new snippets. It is much appreciated. 
+### Snippets
+
+The extension provides snippets for the AnyScript language. The snippets are are work in progress and will be updated in the future.
+
+### RGB Color Picker
+
+The extension provides a color picker for RGB colors. The extension regonizes RGB colors in the format `RGB = {1, 0.2, 0.0};` and provides a color picker when you hover over the color.
+
+![Color Picker](images/colorPicker.gif)
+
+## Change Log
+
+All notable changes to the "anyscript" extension will be documented here.
+
+### 0.2.0
+
+#### Added
+
+- Added color picker for RGB colors
+- New AnyScript class, function, and constant highlighting
+- Improved language configuration
+
+### 0.1.4
+
+- Initial release
 
 ## License
+
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
