@@ -6,6 +6,12 @@
   "engines": {
     "vscode": "^1.81.0"
   },
+  "license": "SEE LICENSE IN LICENSE",
+  "pricing": "Free",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AnyBody/vscode-anyscript"
+  },
   "categories": [
     "Other",
     "Programming Languages",
