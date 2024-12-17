@@ -32,6 +32,12 @@ To format a selected portion of the document, highlight the desired text, right-
 
 All notable changes to the "anyscript" extension will be documented here.
 
+### 0.2.3
+
+### Added
+
+- Added support for `Format Document` and `Format Selection` in .any files
+
 ### 0.2.0
 
 #### Added
