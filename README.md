@@ -32,7 +32,7 @@ To format a selected portion of the document, highlight the desired text, right-
 
 All notable changes to the "anyscript" extension will be documented here.
 
-### 0.2.4
+### 0.2.5
 
 #### Fixed
 
