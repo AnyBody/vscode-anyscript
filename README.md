@@ -32,6 +32,12 @@ To format a selected portion of the document, highlight the desired text, right-
 
 All notable changes to the "anyscript" extension will be documented here.
 
+### 0.2.4
+
+#### Fixed
+
+- A bug in the formatter functions was fixed to avoid breaking conditional logic
+
 ### 0.2.3
 
 ### Added

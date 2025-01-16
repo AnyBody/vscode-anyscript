@@ -52,7 +52,9 @@ const formatIndentation = (code: string, isSelection = false): string => {
 };
 
 const separateEqualSign = (text: string) => {
-  return text.replace(/(\w+)(\s*=\s*)/g, "$1 = ");
+  return text
+    .replace(/(\w+)(\s*([=!<>]=)\s*)(\w+)/g, "$1 $3 $4")
+    .replace(/(\w+)(\s*=\s*)(\w+)/g, "$1 = $3");
 };
 
 export const formatDocumentProvider = (document: vscode.TextDocument) => {
