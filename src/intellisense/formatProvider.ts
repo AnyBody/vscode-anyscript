@@ -58,7 +58,7 @@ const separateEqualSign = (text: string) => {
   let insideMultiLineComment = false;
 
   return text.replace(
-    /(\/\*|\*\/|\/\/|["']|[=!<>]=|[?]{2}=|=)/g,
+    /(\/\*|\*\/|\/\/|["']|[=!<>]=|[?]{2}=|(?<!\s)=(?!\s))/g,
     (match, p1, offset, string) => {
       if (p1 === "/*") {
         insideMultiLineComment = true;
