@@ -52,7 +52,65 @@ const formatIndentation = (code: string, isSelection = false): string => {
 };
 
 const separateEqualSign = (text: string) => {
-  return text.replace(/(\w+)(\s*=\s*)/g, "$1 = ");
+  let insideSingleQuote = false;
+  let insideDoubleQuote = false;
+  let insideSingleLineComment = false;
+  let insideMultiLineComment = false;
+
+  return text.replace(
+    /(\/\*|\*\/|\/\/|["']|[=!<>]=|[?]{2}=|(?<!\s)=(?!\s))/g,
+    (match, p1, offset, string) => {
+      if (p1 === "/*") {
+        insideMultiLineComment = true;
+        return p1;
+      }
+      if (p1 === "*/") {
+        insideMultiLineComment = false;
+        return p1;
+      }
+      if (p1 === "//") {
+        insideSingleLineComment = true;
+        return p1;
+      }
+      if (p1 === "\n" && insideSingleLineComment) {
+        insideSingleLineComment = false;
+        return p1;
+      }
+      if (
+        p1 === "'" &&
+        !insideDoubleQuote &&
+        !insideSingleLineComment &&
+        !insideMultiLineComment
+      ) {
+        insideSingleQuote = !insideSingleQuote;
+        return p1;
+      }
+      if (
+        p1 === '"' &&
+        !insideSingleQuote &&
+        !insideSingleLineComment &&
+        !insideMultiLineComment
+      ) {
+        insideDoubleQuote = !insideDoubleQuote;
+        return p1;
+      }
+      if (
+        insideSingleQuote ||
+        insideDoubleQuote ||
+        insideSingleLineComment ||
+        insideMultiLineComment
+      ) {
+        return p1;
+      }
+      if (/[=!<>]=|[?]{2}=/.test(p1)) {
+        return ` ${p1} `;
+      }
+      if (p1 === "=") {
+        return " = ";
+      }
+      return p1;
+    }
+  );
 };
 
 export const formatDocumentProvider = (document: vscode.TextDocument) => {
